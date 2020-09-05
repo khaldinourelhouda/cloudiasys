@@ -1,0 +1,99 @@
+
+   <!--Start Page Register Form-->
+    <body>   
+    <div class="container" >
+        <div class="d-flex justify-content-center h-100">
+            <div class="card" >
+                <div class="card-header">
+                    <h3>S'inscrire</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span><i class="fab fa-facebook-square"></i></span>
+                        <span><i class="fab fa-google-plus-square"></i></span>
+                        <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" formControlName="fullname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }"  placeholder="username">
+                            <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                                <div *ngIf="f.fullname.errors.required" >Username is required !</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="text"  placeholder="email"  formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="email">
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required" >Email is required !</div>
+                                <div *ngIf="f.email.errors.pattern" >Please write a valid Email address !</div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <span class="input-group-text">
+                            <input type="password" id="password" placeholder="mot de passe"formControlName="password1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password1.errors }" />
+                            <i  id="pass-status" aria-hidden="true" class="fa fa-eye"  onclick="if (password.type == 'text') password.type = 'password';
+                            else password.type = 'text';"></i></span>
+                            <div *ngIf="submitted && f.password1.errors" class="invalid-feedback">
+                                <div *ngIf="f.password1.errors.required" >Password is required !</div>
+                                <div *ngIf="f.password1.errors.pattern" >Password must include minimum 8 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character !</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <span class="input-group-text">
+                            <input type="password" id="password1" placeholder="Confirmer votre mot de passe" formControlName="password2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password2.errors }" />
+                            <i  id="pass-status" aria-hidden="true" class="fa fa-eye"  onclick="if (password1.type == 'text') password1.type = 'password';
+                            else password1.type = 'text';"></i></span>
+                            <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+                                <div *ngIf="f.password2.errors.required">Password is required !</div>
+                                <div *ngIf="f.password2.errors.confirmedValidator" >Password and Confirm Password must be match !</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group ">
+                            <input type="checkbox" formControlName="acceptcheckbox"  class="form-control" class="check"  id="accept" [ngClass]="{ 'is-invalid': submitted && f.acceptcheckbox.errors }">
+                            <label class="acceptlabel" for="accept">
+                                j'accepte les conditions spécifiques de mon compte dévelopeur
+                              </label>
+                              <div *ngIf="submitted && f.acceptcheckbox.errors" class="invalid-feedback " >
+                                <div *ngIf="f.acceptcheckbox.errors.required" > Check this please !</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button  class="btn btn-lg btn-outline-warning float-right">Register</button> 
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center btn btn-secondary btn-lg active">
+                        Vous avez un compte?  <br> 
+                         <a  style = "color : orange" routerLink="/login">   S'identifier</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+       
+
+    
+
+
+
+
+
+    </body>
+   <!--End Page Register Form-->
+
+ 

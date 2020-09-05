@@ -1,0 +1,45 @@
+
+  
+
+    #header {
+       /* background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center / cover no-repeat ;*/
+        background-image: url(../../assets/img/main-banner.jpg);
+    }
+
+    
+
+   
+  /* Styles for wrapping the search box */
+
+.main {
+    width: 50px;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 50px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.input-group{
+    width: 386px;
+  
+    color: black;
+    border:0 !important;
+}
+ .display-3{
+    color:orangered;
+}
